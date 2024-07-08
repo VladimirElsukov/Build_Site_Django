@@ -6,6 +6,12 @@
     <title>{{ title }}</title>
 </head>
 <body>
+    
     <p>{{ content }}</p>
+    {% if is_authenticated %}
+        <p>{{ list.0 }}</p>
+        <p>{{ dict.colour }}</p>
+    {% endif %} 
+    <P>{{ bool }}</P>
 </body>
 </html>

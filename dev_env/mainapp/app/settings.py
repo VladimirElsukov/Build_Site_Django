@@ -38,10 +38,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "main",
-    "goods",
+    "django.contrib.postgres",
+    
 
     "debug_toolbar",
+
+    "main.apps.MainConfig",
+    "goods.apps.GoodsConfig",
 ]
 
 MIDDLEWARE = [
@@ -90,7 +93,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 
 # Password validation

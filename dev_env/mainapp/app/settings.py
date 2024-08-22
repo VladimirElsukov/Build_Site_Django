@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,12 +40,11 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.postgres",
-
     "debug_toolbar",
-    
     "main.apps.MainConfig",
     "goods.apps.GoodsConfig",
     "users.apps.UsersConfig",
+    "articles.apps.BlogPostConfig",
 ]
 
 MIDDLEWARE = [
@@ -134,8 +134,10 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
     ]
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media/'
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
 
 INTERNAL_IPS = [
     # ...

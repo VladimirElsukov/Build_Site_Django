@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+{% endblock %}
+
+{% block content %}
+   
+    
+    <div class="card mb-3" style="width: 100%; height: auto; margin: 20px auto 40px;">
+        <img src="{{ article.thumbnail.url }}" class="card-img-top" alt="{{ article.title }}" style="width: 100%; height: 350px; object-fit: cover;">
+        <div class="card-body" style="padding-top: 20px; padding-bottom: 20px;">
+            <h1 class="card-title">{{ article.title }}</h1>
+            <p class="card-text" style="margin: 20px 10px 70px 10px;">{{ article.full_description }}</p>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Интернет магазин мебели &copy; проект 2024</p>
+        </div>
+    </footer>
+{% endblock %}
+
+
+
+

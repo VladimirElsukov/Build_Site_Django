@@ -7,7 +7,33 @@
 
 {% block content %}
     <h1 class="mt-5 pt-5"><strong>{{ content }}</strong></h1>
+    {% block video %}
+            <video id="background-video" autoplay muted loop>
+            <source src="static/deps/video/video.mp4" type="video/mp4">
+            <source src="path/to/your/video.webm" type="video/webm">
+            Ваш браузер не поддерживает HTML5 видео.
+            </video>
+    {% endblock video %}
+    
+    {% block carousel-line %}
+            <div class="container-carousel">
+                <div class="carousel">
+                    <div class="carousel__face" style="background-image: url('{% static 'deps/images/goods/ammi.jpeg' %}');"><span>Диваны</span></div>
+                    <div class="carousel__face" style="background-image: url('{% static 'deps/images/goods/kresloEco.jpeg' %}');"><span>Кресла</span></div>
+                    <div class="carousel__face" style="background-image: url('{% static 'deps/images/goods/krovat-dream.jpeg' %}');"><span>Кровати</span></div>
+                    <div class="carousel__face" style="background-image: url('{% static 'deps/images/goods/ammi.jpeg' %}');"><span>Матрасы</span></div>
+                    <div class="carousel__face" style="background-image: url('{% static 'deps/images/goods/ammi.jpeg' %}');"><span>Стулья</span></div>
+                    <div class="carousel__face" style="background-image: url('{% static 'deps/images/goods/ammi.jpeg' %}');"><span>Столы</span></div>
+                    <div class="carousel__face" style="background-image: url('{% static 'deps/images/goods/ammi.jpeg' %}');"><span>Комоды и тумбы</span></div>
+                    <div class="carousel__face" style="background-image: url('{% static 'deps/images/goods/ammi.jpeg' %}');"><span>Пуфы и банкетки</span></div>
+                    <div class="carousel__face" style="background-image: url('{% static 'deps/images/goods/ammi.jpeg' %}');"><span>Подушки</span></div>
+                </div>
+            </div>
+            
+    {% endblock  %}
 {% endblock %}
+
+
 
 {% block footer %}
     <footer class="py-4 bg-dark">

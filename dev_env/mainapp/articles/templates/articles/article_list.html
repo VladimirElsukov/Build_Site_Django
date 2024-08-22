@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "deps/css/my_footer_css.css" %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Список публикаций статей</h1>
+    <div class="containercard">
+        <div class="card-deck">
+            {% for post in blog_posts %}
+            <div class="card card-articles">
+                {% if post.thumbnail %}
+                    <img src="{{ post.thumbnail.url }}" class="card-img-top custom-thumbnail" alt="Thumbnail for {{ post.title }}">
+                {% else %}
+                    <img src="{% static 'path/to/default-image.jpg' %}" class="card-img-top" alt="Default image">
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.short_description }}</p>
+                    <a href="{% url 'articles:article_detail' post.slug %}" class="btn btn-primary">Читать дальше</a>
+                </div>
+            </div>
+            {% empty %}
+                <p>No blog posts available.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Интернет магазин мебели &copy; проект 2024</p>
+        </div>
+    </footer>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
